@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import contact from "./contact.png";
+import Header from './Common/Header';
+import Footer from './Common/Footer';
+import contact from "../assets/img/contact.png";
 
 export default class Contact extends Component {
   render() {

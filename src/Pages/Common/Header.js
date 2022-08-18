@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
-import pic from "./logo.png";
+import pic from "../../assets/img/logo.png";
 
 export default class Header extends Component {
   render() {

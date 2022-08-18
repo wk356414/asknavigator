@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './Common/Header';
+import Footer from './Common/Footer';
 
 export default class Locations extends Component {
   render() {

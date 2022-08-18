@@ -1,5 +1,5 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from './Common/Header';
+import Footer from './Common/Footer';
 import React, { Component, Fragment } from 'react'
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,8 @@ import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 fontawesome.library.add(faCheckSquare, faCoffee);
 
 export default class Home extends Component {
+
+
   render() {
     return (
     <Fragment>

@@ -4,12 +4,12 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Home from "./Home";
-import Contact from './Contact'
-import Services from "./Services"
-import Faqs from "./Faqs"
-import Aboutus from "./Aboutus"
-import Location from "./Locations"
+import Home from "./Pages/Home";
+import Contact from './Pages/Contact'
+import Services from "./Pages/Services"
+import Faqs from "./Pages/Faqs"
+import Aboutus from "./Pages/Aboutus"
+import Location from "./Pages/Locations"
 
 export default function App() {
   return (

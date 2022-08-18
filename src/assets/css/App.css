@@ -192,7 +192,7 @@ h1.number {
   padding-top:230px;
 }
 .main-page{
-  background-image: url('white-bg1.png');
+  background-image: url('../img/white-bg1.png');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;

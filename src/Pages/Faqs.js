@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Header from './Header';
-import Footer from './Footer';
-import faq from "./faq.png";
+import Header from './Common/Header';
+import Footer from './Common/Footer';
+import faq from "../assets/img/faq.png";
 
 export default class Faqs extends Component {
   render() {
