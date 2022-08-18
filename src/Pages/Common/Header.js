@@ -23,11 +23,11 @@ export default class Header extends Component {
                   <div className="title">PACKERBAZAR</div>
                   <ul className="list-items">
                     <li><Link to="/"><FontAwesomeIcon icon="fa-solid fa-user" />Home</Link></li>
-                    <li><Link to={"/service"}><i className="fas fa-sliders-h"></i>Services</Link></li>
-                    <li><Link to={"/contact"}><i className="fas fa-user"></i>Contact us</Link></li>
-                    <li><Link to={"/faqs"}><i className="fas fa-cog"></i>FAQs</Link></li>
                     <li><Link to={"/aboutus"}><i className="fas fa-address-book"></i>About us </Link></li>
+                    <li><Link to={"/service"}><i className="fas fa-sliders-h"></i>Services</Link></li>
+                    <li><Link to={"/faqs"}><i className="fas fa-cog"></i>FAQs</Link></li>
                     <li><Link to={"/location"}><i className="fas fa-user"></i>Locations</Link></li>
+                    <li><Link to={"/contact"}><i className="fas fa-user"></i>Contact Us</Link></li>
                     <li><a href="tel:+917988174873"><FontAwesomeIcon icon="fa-solid fa-phone" />Call now</a></li>
                     <div className="icons">
                       <a href={() => false}><i className="fab fa-facebook-f"></i></a>

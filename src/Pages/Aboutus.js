@@ -27,7 +27,8 @@ export default class Aboutus extends Component {
             <img width="100%" src={loader} alt="loading..."/>
           </div>
           <div className='col-sm-6'>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.            </p>
+            <p>Are you planning on moving Households, Vehicles or any other item soon and do not want the fuss of packing? Searching for Movers and Packers? Looking for an affordable Movers and Packers? Packers Bazar is the solution. </p>
+            <p>Packers Bazar is one of the best moving companies in India. We conduct moves throughout India safely and with proper security. If you are planning for moving/relocate your Household, Vehicles or any other item Packers Bazar is the right choice for you. Packers Bazar is not only a trusted moving company but also a budget-friendly moving company. </p>
           </div>
         </div>
       </div>
@@ -35,7 +36,7 @@ export default class Aboutus extends Component {
       <div className='container about-para'>
         <div className='row'>
           <div className='col-sm-6'>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.            </p>
+          <p>We are a trusted and reliable packers and movers company in India. Do you have products you love and want to move but just will not fit in the car? Do not worry, Packers Bazar is here to help. </p>
           </div>
           <div className='col-sm-6'>
             <img width="100%" src={loader} alt="loading..."/>
