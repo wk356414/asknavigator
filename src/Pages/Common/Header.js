@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from "react-router-dom";
-import fontawesome from '@fortawesome/fontawesome'
+// import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
+// import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 import pic from "../../assets/img/logo.png";
 
 export default class Header extends Component {
@@ -30,17 +30,17 @@ export default class Header extends Component {
                     <li><Link to={"/location"}><i className="fas fa-user"></i>Locations</Link></li>
                     <li><a href="tel:+917988174873"><FontAwesomeIcon icon="fa-solid fa-phone" />Call now</a></li>
                     <div className="icons">
-                      <a href="#"><i className="fab fa-facebook-f"></i></a>
-                      <a href="#"><i className="fab fa-twitter"></i></a>
-                      <a href="#"><i className="fab fa-github"></i></a>
-                      <a href="#"><i className="fab fa-youtube"></i></a>
+                      <a href={() => false}><i className="fab fa-facebook-f"></i></a>
+                      <a href={() => false}><i className="fab fa-twitter"></i></a>
+                      <a href={() => false}><i className="fab fa-github"></i></a>
+                      <a href={() => false}><i className="fab fa-youtube"></i></a>
                     </div>
                   </ul>
                 </nav>
               </div>
             </div>
             <div className="col-sm-4 logo">
-              <center><img src={pic} /></center>
+              <center><img src={pic} alt="loading..." /></center>
             </div>
             <div className="col-sm-4">
               <h1 className='number'><a href="tel:+917988174873">Call Now</a></h1>

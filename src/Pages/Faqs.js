@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import fontawesome from '@fortawesome/fontawesome'
+// import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Header from './Common/Header';
 import Footer from './Common/Footer';
@@ -33,7 +33,7 @@ export default class Faqs extends Component {
             </ul>
           </div>
           <div className='col-sm-6'>
-          <img width="100%" src={faq} />
+          <img width="100%" src={faq} alt="loading..." />
           </div>
         </div>
       </div>

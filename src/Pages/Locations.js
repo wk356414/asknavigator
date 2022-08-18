@@ -22,16 +22,16 @@ export default class Locations extends Component {
         <div className='row'>
           <center>
           <div className='lcoations'>
-          <li><a href='#'>Delhi</a></li>
-          <li><a href='#'>Mumbai</a></li>
-          <li><a href='#'>Kolkata</a></li>
-          <li><a href='#'>Gurgaon</a></li>
-          <li><a href='#'>Bengaluru</a></li>
-          <li><a href='#'>Indore</a></li>
-          <li><a href='#'>Goa</a></li>
-          <li><a href='#'>Noida</a></li>
-          <li><a href='#'>Bhopal</a></li>
-          <li><a href='#'>Gwalior</a></li>
+          <li><a href={() => false}>Delhi</a></li>
+          <li><a href={() => false}>Mumbai</a></li>
+          <li><a href={() => false}>Kolkata</a></li>
+          <li><a href={() => false}>Gurgaon</a></li>
+          <li><a href={() => false}>Bengaluru</a></li>
+          <li><a href={() => false}>Indore</a></li>
+          <li><a href={() => false}>Goa</a></li>
+          <li><a href={() => false}>Noida</a></li>
+          <li><a href={() => false}>Bhopal</a></li>
+          <li><a href={() => false}>Gwalior</a></li>
         </div>
           </center>
         </div>
