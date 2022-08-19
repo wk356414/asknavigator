@@ -411,7 +411,7 @@ ul.list-items svg {
 }
 .contact h3 {
   text-align: center;
-  font-size: 34px;
+  font-size: 24px;
   padding: 16px;
   color: #291b25;
 }
@@ -458,4 +458,7 @@ button.query:hover {
   padding: 0px 0px 30px;
   font-weight: 500;
   width: 80%;
+}
+.contact p{
+  text-align: center;
 }

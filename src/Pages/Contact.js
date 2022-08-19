@@ -25,7 +25,8 @@ export default class Contact extends Component {
             <img alt='contact' width="100%" src={contact} />
           </div>
           <div className='col-sm-6'>
-            <h3>Fill The Contact Form</h3>
+            <h3>IMMEDIATELY REQUIRE A HOUSE MOVER? <br /> FOR A QUOTE, CONTACT US RIGHT AWAY.</h3>
+            <p>Packers Bazar can handle all the worry and difficulty of packing boxes and moving, whether you are going to relocate homes, cars, or any other thing.</p>
             <form>
               <div className="mb-3">
                 <label for="name" className="form-label">Name <span id='veg'>*</span></label>
@@ -44,6 +45,11 @@ export default class Contact extends Component {
               <div className="mb-3">
                 <label for="email" className="form-label">Email  <span id='veg'>*</span></label>
                 <input type="email" className="form-control"  name='email' placeholder='Email' required />
+              </div>
+
+              <div className="mb-3">
+                <label for="number" className="form-label">Number  <span id='veg'>*</span></label>
+                <input type="text" className="form-control"  name='number' placeholder='Contact Number' required />
               </div>
 
               <div className="mb-3">
