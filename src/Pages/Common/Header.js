@@ -45,7 +45,7 @@ export default class Header extends Component {
               <center><img src={pic} alt="loading..." /></center>
             </div>
             <div className="col-sm-4">
-              <h1 className='number'><a href="tel:+917988174873">Call Now</a></h1>
+              <h1 className='number'><a href="tel:+917988174873">Call Now    </a></h1>
             </div>
           </div>
         </div>
