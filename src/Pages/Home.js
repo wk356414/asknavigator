@@ -92,9 +92,8 @@ export default class Home extends Component {
                             <FontAwesomeIcon icon="fa-box" />
                             <p>Other</p>
                         </div>
-                            <p>Are you planning on moving Households, Vehicles or any other item soon and do not want the fuss of packing? Searching for Movers and Packers? Looking for an affordable Movers and Packers? Packers Bazar is the solution.</p>
                         {/*Modal*/}
-                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-scrollable">
                                 <div className="modal-content">
                                 <div className="modal-header">
@@ -165,6 +164,13 @@ export default class Home extends Component {
             </div>
          </div>
        </div>
+
+        <div className='container home-text'>
+            <div className='row'>
+            <p>Are you planning on moving Households, Vehicles or any other item soon and do not want the fuss of packing? Searching for Movers and Packers? Looking for an affordable Movers and Packers? Packers Bazar is the solution.</p>
+            </div>
+        </div>
+
         <Footer />
     </Fragment>
     )

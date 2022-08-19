@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from "react-router-dom";
-// import fontawesome from '@fortawesome/fontawesome'
+//     import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 import {  faFacebookF, faTwitter, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
