@@ -3,16 +3,21 @@ import Footer from './Common/Footer';
 import React, { Component, Fragment } from 'react'
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
+import { faCheckSquare, faCoffee, faCrosshairs} from '@fortawesome/fontawesome-free-solid'
+import Autocomplete from "react-google-autocomplete";
 
 
-fontawesome.library.add(faCheckSquare, faCoffee);
+fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs);
 
 export default class Home extends Component {
     constructor(props){
         super(props)
         this.Next_one = this.Next_one.bind(this);
+        this.state = {
+
+        }
     }
+
     Next_one() {
         let Form1 = document.getElementById('Form1')
         let Form2 = document.getElementById('Form2')
@@ -98,11 +103,15 @@ export default class Home extends Component {
                                 <div className="modal-body">
                                 <div className=" main-box-form">
                                 <form id="Form1"  >
-                                    <h3 id='heading-pop'>CREATE ACCOUNT</h3>
-                                    <input type="text" placeholder="Email" required />
-                                    <input type="password" placeholder="password" required />
-                                    <input type="password" placeholder="Confirm password" required />
-
+                                        <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
+                                    <h3 id='heading-pop'>
+                                        Choose Your Pickup Location
+                                    </h3>
+                                    <Autocomplete
+                                          style={{ width: "90%", zIndex:999 }}
+                                        apiKey={'AIzaSyBDA4IeNM1O1HNxI2y-5WwcONyv1TwdZLc'}
+                                        onPlaceSelected={(place) => console.log(place)}
+                                    />
                                     <div className="btn-box">
                                         <button type="button" id="Next1" onClick={this.Next_one}>NEXT</button>
                                     </div>
