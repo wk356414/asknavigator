@@ -25,13 +25,13 @@ export default class Services extends Component {
             <img width="100%" src={loader} alt="loading..."/>
           </div>
           <div className='col-sm-6'>
-            <h3> Movers and Packers</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.            </p>
+            <h3>Movers and Packers</h3>
+            <p>When it comes to assisting individuals with moving households, vehicles, or any other item, we are experts. We assist clients all around India with their moves, making sure that everything is securely packed. Many customers have distinct needs, and our specialised moving experts offer a one-on-one, individualised service, assisting you with every aspect of your relocation.</p>
+            <p>Contact Packers Bazar if you need a firm to deliver something to your consumers or if you need a product delivered as quickly as possible to your home. We move households, vehicles, or any other item safely within your budget.</p>
           </div>
           <div className='spac'></div>
           <div className='col-sm-6'>
-            <h3> Movers and Packers</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.            </p>
+            <p>As soon as you hire us, you can relax knowing that you are in the capable hands of our highly qualified staff. In order to guarantee that our clients receive a trustworthy service at a reasonable cost, our team of highly qualified experts is passionate about what they do.</p>
           </div>
           <div className='col-sm-6'>
             <img width="100%" src={loader} alt="img" />

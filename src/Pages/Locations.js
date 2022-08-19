@@ -22,6 +22,8 @@ export default class Locations extends Component {
         <div className='row'>
           <center>
           <div className='lcoations'>
+            <p>Even when you're not around, we take care of things.We know that relocating may be stressful, so we make sure we take every precaution to make your move worry-free.
+            As a relocations company, we offer moving services in the following cities:</p>
           <li><a href={() => false}>Delhi</a></li>
           <li><a href={() => false}>Mumbai</a></li>
           <li><a href={() => false}>Kolkata</a></li>
