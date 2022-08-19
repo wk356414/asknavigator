@@ -568,3 +568,23 @@ button.accordion-button {
   display: inline-block;
   margin: 18px 2px;
 }
+
+
+
+
+
+
+
+.pac-container {
+  background-color: #FFF;
+  z-index: 2001;
+  position: fixed;
+  display: inline-block;
+  float: left;
+}
+.modal{
+  z-index: 2000;
+}
+.modal-backdrop{
+  z-index: 1000;
+}

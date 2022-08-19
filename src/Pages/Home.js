@@ -3,18 +3,20 @@ import Footer from './Common/Footer';
 import React, { Component, Fragment } from 'react'
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee, faCrosshairs} from '@fortawesome/fontawesome-free-solid'
+import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/src/stylesheets/datepicker.scss";
 
-
-fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs);
+fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
 
 export default class Home extends Component {
     constructor(props){
         super(props)
         this.Next_one = this.Next_one.bind(this);
         this.state = {
-
+            current_date : new Date()
         }
     }
 
@@ -56,7 +58,12 @@ export default class Home extends Component {
         Progress.style.width='240px';
     }
 
+    handleDateChange=()=>{
+
+    }
+
   render() {
+    
     return (
     <Fragment>
         <Header />
@@ -103,7 +110,7 @@ export default class Home extends Component {
                                 <div className="modal-body">
                                 <div className=" main-box-form">
                                 <form id="Form1"  >
-                                        <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
+                                    <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
                                     <h3 id='heading-pop'>
                                         Choose Your Pickup Location
                                     </h3>
@@ -118,11 +125,13 @@ export default class Home extends Component {
                                 </form>
 
                                 <form id="Form2">
-                                    <h3 id='heading-pop'>SOCIAL FROM</h3>
-                                    <input type="text" placeholder="Medium" required />
-                                    <input type="text" placeholder="Github"  />
-                                    <input type="text" placeholder="linkdin"  />
-
+                                    <h1><FontAwesomeIcon icon={faLocationArrow} /></h1>
+                                    <h3 id='heading-pop'>Where do you want to move?</h3>
+                                    <Autocomplete
+                                          style={{ width: "90%", zIndex:999 }}
+                                        apiKey={'AIzaSyBDA4IeNM1O1HNxI2y-5WwcONyv1TwdZLc'}
+                                        onPlaceSelected={(place) => console.log(place)}
+                                    />
                                     <div className="btn-box">
                                         <button type="button" id="Back1" onClick={this.Back_one}>BACK</button>
                                         <button type="button" id="Next2" onClick={this.Next_two}>NEXT</button>	
@@ -130,11 +139,13 @@ export default class Home extends Component {
                                 </form>
 
                                 <form id="Form3">
-                                    <h3 id='heading-pop'>PERSONAL INFO</h3>
-                                    <input type="text" placeholder="First name" required />
-                                    <input type="text" placeholder="Last name" required />
-                                    <input type="text" placeholder="mo number" required />
-
+                                    <h3 id='heading-pop'>When do you want to move?</h3>
+                                    
+                                    <DatePicker
+                                        selected={this.state.current_date}
+                                        onChange={this.handleDateChange}
+                                        showTimeSelect
+                                    />
                                     <div className="btn-box">
                                         <button type="button" id="Back2" onClick={this.Back_two}>BACK</button>
                                         <button type="submit" >SUBMIT</button>
