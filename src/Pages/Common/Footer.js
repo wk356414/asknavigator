@@ -7,9 +7,8 @@ function Footer() {
             <div className="row">
                 <div className="col-sm-3">
                     <h3 className="footer-one-title">PACKERBAZAR</h3>
-                    <p className="footer-one-text">Dispatching Happiness</p><br/>
-                    <p className="footer-two-text">Asknavigator is Mediator for Packers and Movers and the People who want packing and moving services. we help
-                    customers to find the best packers and movers in their area</p>
+                    <p className="footer-one-text">The new way of shifting</p><br/>
+                    <p className="footer-two-text">Packers Bazar is one of the best moving companies in India. We conduct moves throughout India safely and with proper security.</p>
                     <div className="social">
                             <p className="footer-social-text">Follow Our Socials</p>
                             <div className="icon">

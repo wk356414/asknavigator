@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Header from './Common/Header';
 import Footer from './Common/Footer';
+import map from "../assets/img/map.png";
 
 export default class Locations extends Component {
   render() {
@@ -18,10 +19,13 @@ export default class Locations extends Component {
         </div>
       </div>
 
-      <div className='container '>
+      <div className='container lcoations'>
         <div className='row'>
+          <div className='col-sm-6'>
+            <img src={map} alt="map"/>
+          </div>
+          <div className='col-sm-6'>
           <center>
-          <div className='lcoations'>
             <p>Even when you're not around, we take care of things.We know that relocating may be stressful, so we make sure we take every precaution to make your move worry-free.
             As a relocations company, we offer moving services in the following cities:</p>
           <li><a href={() => false}>Delhi</a></li>
@@ -34,8 +38,8 @@ export default class Locations extends Component {
           <li><a href={() => false}>Noida</a></li>
           <li><a href={() => false}>Bhopal</a></li>
           <li><a href={() => false}>Gwalior</a></li>
-        </div>
           </center>
+          </div>
         </div>
       </div>
       
