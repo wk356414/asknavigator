@@ -3,7 +3,7 @@ import Footer from './Common/Footer';
 import React, { Component, Fragment } from 'react'
 import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow} from '@fortawesome/fontawesome-free-solid'
+import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faCalendar, faPhone, faQuestion, faList} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -28,7 +28,7 @@ export default class Home extends Component {
 
         Form1.style.left = '-450px';
         Form2.style.left = '40px';
-        Progress.style.width='240px';			
+        Progress.style.width='130px';			
     }
     Next_two = () =>{
         let Form3 = document.getElementById('Form3')
@@ -37,8 +37,29 @@ export default class Home extends Component {
         
         Form2.style.left = '-450px';
         Form3.style.left = '40px';
+        Progress.style.width='195px';
+    }
+
+    Next_three = () =>{
+        let Form4 = document.getElementById('Form4')
+        let Form3 = document.getElementById('Form3')
+        let Progress = document.getElementById('Progress')
+        
+        Form3.style.left = '-450px';
+        Form4.style.left = '40px';
+        Progress.style.width='270px';
+    }
+
+    Next_foure = () =>{
+        let Form5 = document.getElementById('Form5')
+        let Form4 = document.getElementById('Form4')
+        let Progress = document.getElementById('Progress')
+        
+        Form5.style.left = '40px';
+        Form4.style.left = '-450px';
         Progress.style.width='360px';
     }
+    
     Back_one = () => {
         let Form1 = document.getElementById('Form1')
         let Form2 = document.getElementById('Form2')
@@ -46,7 +67,7 @@ export default class Home extends Component {
         
         Form1.style.left = '40px';
         Form2.style.left = '450px';
-        Progress.style.width='120px';
+        Progress.style.width='65px';
     }
     Back_two = () => {
         let Form3 = document.getElementById('Form3')
@@ -55,7 +76,25 @@ export default class Home extends Component {
         
         Form3.style.left = '450px';
         Form2.style.left = '40px';
-        Progress.style.width='240px';
+        Progress.style.width='130px';
+    }
+    Back_three = () => {
+        let Form4 = document.getElementById('Form4')
+        let Form3 = document.getElementById('Form3')
+        let Progress = document.getElementById('Progress')
+        
+        Form4.style.left = '450px';
+        Form3.style.left = '40px';
+        Progress.style.width='195px';
+    }
+    Back_four = () => {
+        let Form5 = document.getElementById('Form5')
+        let Form4 = document.getElementById('Form4')
+        let Progress = document.getElementById('Progress')
+        
+        Form5.style.left = '450px';
+        Form4.style.left = '40px';
+        Progress.style.width='270px';
     }
 
     handleDateChange=()=>{
@@ -104,7 +143,7 @@ export default class Home extends Component {
                             <div className="modal-dialog modal-dialog-scrollable">
                                 <div className="modal-content">
                                 <div className="modal-header">
-                                <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                <h5 className="modal-title model_title"  id="staticBackdropLabel">Packerbazar</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div className="modal-body">
@@ -125,13 +164,16 @@ export default class Home extends Component {
                                 </form>
 
                                 <form id="Form2">
+
                                     <h1><FontAwesomeIcon icon={faLocationArrow} /></h1>
+
                                     <h3 id='heading-pop'>Where do you want to move?</h3>
                                     <Autocomplete
                                           style={{ width: "90%", zIndex:999 }}
                                         apiKey={'AIzaSyBDA4IeNM1O1HNxI2y-5WwcONyv1TwdZLc'}
                                         onPlaceSelected={(place) => console.log(place)}
                                     />
+
                                     <div className="btn-box">
                                         <button type="button" id="Back1" onClick={this.Back_one}>BACK</button>
                                         <button type="button" id="Next2" onClick={this.Next_two}>NEXT</button>	
@@ -139,32 +181,58 @@ export default class Home extends Component {
                                 </form>
 
                                 <form id="Form3">
+                                    <h1><FontAwesomeIcon icon={faCalendar} /></h1>
                                     <h3 id='heading-pop'>When do you want to move?</h3>
-                                    
-                                    <DatePicker
-                                        selected={this.state.current_date}
-                                        onChange={this.handleDateChange}
-                                        showTimeSelect
-                                    />
+                                    <input type="date" value = "date()" required />
+                                    <input type="text" placeholder="Enter Name" required />
+
                                     <div className="btn-box">
                                         <button type="button" id="Back2" onClick={this.Back_two}>BACK</button>
-                                        <button type="submit" >SUBMIT</button>
+                                        <button type="button" id="Next3" onClick={this.Next_three}>NEXT</button>
+                                        
                                     </div>
                                 </form>
 
-                                <div className="step-row">
-                                <div id="Progress"></div>
-                                    <div className="step-col"><small>Step 1</small></div>
-                                    <div className="step-col"><small>Step 2</small></div>
-                                    <div className="step-col"><small>Step 3</small></div>
-                                </div>
+                                <form id="Form4">
+                                    <h1><FontAwesomeIcon icon={faPhone} /></h1>  
+                                    <h3 id='heading-pop'>How can we contact you</h3>
+                                    <input type="" placeholder="Enter Number" required />
+                                    <span id='phone'><FontAwesomeIcon icon={faQuestion}/> Why Phone Number is required? </span><br></br>
+                                    <span id='confirm'><small>1</small> Confirm Requirement</span><br></br>
+                                    <span id='requ'><small>We Will Confirm your Requirement to get better results</small></span><br></br>
+                                    <span id='confirm'><small>2</small> Avoid Spam</span><br></br>
+                                    <span id='requ'><small>We have to verify that you are a real human & not a bot or spammer.</small></span><br></br>
 
 
+                                    <div className="btn-box">
+                                        <button type="button" id="Back3" onClick={this.Back_three}>BACK</button>
+                                        <button type="button" id="Next4" onClick={this.Next_foure}>NEXT</button>
+                                        
+                                    </div>
+                                </form>
+
+                                <form id="Form5">
+                                    <h1><FontAwesomeIcon icon={faList} /></h1>
+                                    <h3 id='heading-pop'>What items are you taking with you?</h3>
+                                    <input type="text" placeholder="Item" required />
+                                    <h5> Suggestions</h5>
+
+
+                                    <div className="btn-box">
+                                        <button type="button" id="Back4" onClick={this.Back_four}>BACK</button>
+                                        <button type='submit' >Get Price Now</button>
+                                        
+                                    </div>
+                                </form>
+                                    <div className="step-row">
+                                    <div id="Progress"></div>
+                                        <div className="step-col"><small>Step 1</small></div>
+                                        <div className="step-col"><small>Step 2</small></div>
+                                        <div className="step-col"><small>Step 3</small></div>
+                                        <div className="step-col"><small>Step 4</small></div>
+                                        <div className="step-col"><small>Step 5</small></div>
+                                    </div>
                             </div>
-                                </div>
-                                <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Understood</button>
                                 </div>
                                 </div>
                             </div>
