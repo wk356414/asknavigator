@@ -266,7 +266,7 @@ h1.number {
 .main-page h1 {
   color: black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 .main-header-down p{
   padding-top: 40px !important;
@@ -383,11 +383,11 @@ ul.list-items svg {
 }
 .about-para p {
   padding: 00px 0px;
+  font-size: 18px;
 }
 /*faq*/
 .about-para h3 {
   color: #dd0808;
-  padding-left: 32px;
   padding-bottom: 10px;
 }
 .about-para ul li {
@@ -453,7 +453,7 @@ button.query:hover {
 
 .lcoations p {
   padding: 20px 0px 30px;
-  font-weight: 500;
+  font-size: 18px;
 
 }
 .contact p{
@@ -461,7 +461,7 @@ button.query:hover {
 }
 .main-box-form{
 	width: 360px;
-	height: 430px;
+	height: 485px;
 	margin: 8% auto;
 	background: #fff;
 	border-radius: 8px;
@@ -472,11 +472,12 @@ button.query:hover {
 	text-align: center;
 	margin-bottom: 40px;
 	color: #777;
+  font-size: 20px;
 }
 .main-box-form form{
 	width: 280px;
 	position: absolute;
-	top: 100px;
+	top: 50px;
 	left: 40px;
 	transition: 0.5s;
 }
@@ -488,6 +489,10 @@ button.query:hover {
 	border-bottom: 1px solid #999;
 	outline: none;
 	background: transparent;
+  margin-bottom:8px;
+}
+.main-page h1 svg {
+  font-size: 28px;
 }
 ::placeholder{
 	color: #777;
@@ -498,7 +503,7 @@ button.query:hover {
 	text-align: center;
 }
  .main-box-form form button{
-	width: 	110px;
+	width: 	115px;
 	height: 35px;
 	margin: 0 10px;
 	background: linear-gradient(to right, #ff105f,#ffad06);
@@ -514,6 +519,12 @@ button.query:hover {
 
 #Form3 {
     left: 450px;
+}
+#Form4{
+  left: 450px;;
+}
+#Form5{
+  left: 450px;;
 }
 .step-row{
 	width: 360px;
@@ -533,7 +544,7 @@ button.query:hover {
 #Progress{
 	position: absolute;
 	height: 100%;
-	width: 120px;
+	width: 65px;
 	background: linear-gradient(to right, #ff105f,#ffad06);
 	transition: 1s;
 }
@@ -567,4 +578,33 @@ button.accordion-button {
 .lcoations li {
   display: inline-block;
   margin: 18px 2px;
+}
+.pac-container{
+  position: absolute;
+  z-index: 999999 !important;
+}
+.model_title {
+  margin: auto;
+  position: absolute;
+  left: 40%;
+}
+span#phone svg {
+  background: #444040;
+  padding: 3px 4px;
+  color: white;
+  border-radius: 5px;
+}
+span#phone {
+  font-weight: 700;
+  position: relative;
+}
+span#confirm small {
+  background: #262525;
+  padding: 1px 5px;
+  color: white;
+  border-radius: 4px;
+}
+span#requ small {
+  position: relative;
+  left: 20px;
 }
