@@ -579,6 +579,7 @@ button.accordion-button {
   display: inline-block;
   margin: 18px 2px;
 }
+
 .pac-container{
   position: absolute;
   z-index: 999999 !important;
@@ -607,4 +608,3 @@ span#confirm small {
 span#requ small {
   position: relative;
   left: 20px;
-}

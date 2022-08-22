@@ -5,16 +5,18 @@ import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faCalendar, faPhone, faQuestion, faList} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/src/stylesheets/datepicker.scss";
 
-
-fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs);
+fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
 
 export default class Home extends Component {
     constructor(props){
         super(props)
         this.Next_one = this.Next_one.bind(this);
         this.state = {
-
+            current_date : new Date()
         }
     }
 
@@ -95,7 +97,12 @@ export default class Home extends Component {
         Progress.style.width='270px';
     }
 
+    handleDateChange=()=>{
+
+    }
+
   render() {
+    
     return (
     <Fragment>
         <Header />
@@ -142,7 +149,7 @@ export default class Home extends Component {
                                 <div className="modal-body">
                                 <div className=" main-box-form">
                                 <form id="Form1"  >
-                                        <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
+                                    <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
                                     <h3 id='heading-pop'>
                                         Choose Your Pickup Location
                                     </h3>
@@ -157,7 +164,9 @@ export default class Home extends Component {
                                 </form>
 
                                 <form id="Form2">
-                                <h1><FontAwesomeIcon icon={faLocationArrow} /></h1>
+
+                                    <h1><FontAwesomeIcon icon={faLocationArrow} /></h1>
+
                                     <h3 id='heading-pop'>Where do you want to move?</h3>
                                     <Autocomplete
                                           style={{ width: "90%", zIndex:999 }}
