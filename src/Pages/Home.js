@@ -5,20 +5,36 @@ import fontawesome from '@fortawesome/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faCalendar, faPhone, faQuestion, faList} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-// import "react-datepicker/src/stylesheets/datepicker.scss";
+import { WithContext as ReactTags } from 'react-tag-input-latest';
+
+
 
 fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
 
 export default class Home extends Component {
     constructor(props){
         super(props)
-        this.Next_one = this.Next_one.bind(this);
         this.state = {
-            current_date : new Date()
+            pick_location : '',
+            move_location : '',
+            client_name : '',
+            move_date : new Date(),
+            tags : [ {id: 1, text: "Apples"} ],
+            suggestions: ["Banana", "Mango", "Pear", "Apricot"] 
         }
+        this.Next_one = this.Next_one.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
+      }
 
     Next_one() {
         let Form1 = document.getElementById('Form1')
@@ -96,12 +112,34 @@ export default class Home extends Component {
         Form4.style.left = '40px';
         Progress.style.width='270px';
     }
-
-    handleDateChange=()=>{
-
+    handleDelete =(i)=> {
+        let tags = this.state.tags;
+        tags.splice(i, 1);
+        this.setState({tags: tags});
+    }
+    handleAddition =(tag)=> {
+        let tags = this.state.tags;
+        tags.push({
+            id: tags.length + 1,
+            text: tag
+        });
+        this.setState({tags: tags});
+    }
+    handleDrag =(tag, currPos, newPos)=> {
+        let tags = this.state.tags;
+ 
+        // mutate array
+        tags.splice(currPos, 1);
+        tags.splice(newPos, 0, tag);
+ 
+        // re-render
+        this.setState({ tags: tags });
     }
 
   render() {
+    // console.log(this.state)
+    let tags = this.state.tags;
+    let suggestions = this.state.suggestions;
     
     return (
     <Fragment>
@@ -154,9 +192,10 @@ export default class Home extends Component {
                                         Choose Your Pickup Location
                                     </h3>
                                     <Autocomplete
-                                          style={{ width: "90%", zIndex:999 }}
+                                        style={{ width: "90%", zIndex:999 }}
                                         apiKey={'AIzaSyBDA4IeNM1O1HNxI2y-5WwcONyv1TwdZLc'}
-                                        onPlaceSelected={(place) => console.log(place)}
+                                        inputAutocompleteValue={this.state.pick_location}
+                                        onPlaceSelected={(place) => this.setState({pick_location:place.formatted_address})}
                                     />
                                     <div className="btn-box">
                                         <button type="button" id="Next1" onClick={this.Next_one}>NEXT</button>
@@ -169,9 +208,10 @@ export default class Home extends Component {
 
                                     <h3 id='heading-pop'>Where do you want to move?</h3>
                                     <Autocomplete
-                                          style={{ width: "90%", zIndex:999 }}
+                                        style={{ width: "90%", zIndex:999 }}
                                         apiKey={'AIzaSyBDA4IeNM1O1HNxI2y-5WwcONyv1TwdZLc'}
-                                        onPlaceSelected={(place) => console.log(place)}
+                                        inputAutocompleteValue={this.state.move_location}
+                                        onPlaceSelected={(place) => this.setState({move_location:place.formatted_address})}
                                     />
 
                                     <div className="btn-box">
@@ -183,8 +223,19 @@ export default class Home extends Component {
                                 <form id="Form3">
                                     <h1><FontAwesomeIcon icon={faCalendar} /></h1>
                                     <h3 id='heading-pop'>When do you want to move?</h3>
-                                    <input type="date" value = "date()" required />
-                                    <input type="text" placeholder="Enter Name" required />
+                                    <input 
+                                        type="date" 
+                                        value={this.state.move_date} 
+                                        name="move_date" 
+                                        onChange={this.handleInputChange} 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        placeholder="Enter Name" 
+                                        value={this.state.client_name} 
+                                        name="client_name" 
+                                        onChange={this.handleInputChange} 
+                                    />
 
                                     <div className="btn-box">
                                         <button type="button" id="Back2" onClick={this.Back_two}>BACK</button>
@@ -196,7 +247,13 @@ export default class Home extends Component {
                                 <form id="Form4">
                                     <h1><FontAwesomeIcon icon={faPhone} /></h1>  
                                     <h3 id='heading-pop'>How can we contact you</h3>
-                                    <input type="" placeholder="Enter Number" required />
+                                    <input 
+                                        type="number" 
+                                        placeholder="Enter Number" 
+                                        name='phone_number'
+                                        value={this.state.phone_number}
+                                        onChange={this.handleInputChange}
+                                    />
                                     <span id='phone'><FontAwesomeIcon icon={faQuestion}/> Why Phone Number is required? </span><br></br>
                                     <span id='confirm'><small>1</small> Confirm Requirement</span><br></br>
                                     <span id='requ'><small>We Will Confirm your Requirement to get better results</small></span><br></br>
@@ -217,7 +274,11 @@ export default class Home extends Component {
                                     <input type="text" placeholder="Item" required />
                                     <h5> Suggestions</h5>
 
-
+                                    <ReactTags tags={tags}
+                                        suggestions={suggestions}
+                                        handleDelete={this.handleDelete}
+                                        handleAddition={this.handleAddition}
+                                        handleDrag={this.handleDrag} />
                                     <div className="btn-box">
                                         <button type="button" id="Back4" onClick={this.Back_four}>BACK</button>
                                         <button type='submit' >Get Price Now</button>
