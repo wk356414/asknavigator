@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faCalendar, faPhone, faQuestion, faList} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
 import { WithContext as ReactTags } from 'react-tag-input-latest';
-
+import { ToastContainer, toast } from "react-toast";
+import axios from 'axios'
 
 
 fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
@@ -18,9 +19,10 @@ export default class Home extends Component {
             pick_location : '',
             move_location : '',
             client_name : '',
-            move_date : new Date(),
-            tags : [ {id: 1, text: "Apples"} ],
-            suggestions: ["Banana", "Mango", "Pear", "Apricot"] 
+            move_date : '',
+            phone_number : '',
+            tags : [],
+            suggestions: ["Double Bed", "Single Bed", "Mattress", "Seater Sofa", "5 Seater Sofa", "Washing Machine", "Window AC"] 
         }
         this.Next_one = this.Next_one.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -36,21 +38,28 @@ export default class Home extends Component {
         });
       }
 
+
     Next_one() {
         let Form1 = document.getElementById('Form1')
         let Form2 = document.getElementById('Form2')
         let Progress = document.getElementById('Progress')
-        console.log(Form1)
+        
+        if(this.state.pick_location == ''){
+            return alert('please enter pickup location');
+        }
 
         Form1.style.left = '-450px';
         Form2.style.left = '40px';
         Progress.style.width='130px';			
     }
+
     Next_two = () =>{
         let Form3 = document.getElementById('Form3')
         let Form2 = document.getElementById('Form2')
         let Progress = document.getElementById('Progress')
-        
+        if(this.state.move_location == ''){
+            return alert('please enter move location')
+        }
         Form2.style.left = '-450px';
         Form3.style.left = '40px';
         Progress.style.width='195px';
@@ -60,7 +69,12 @@ export default class Home extends Component {
         let Form4 = document.getElementById('Form4')
         let Form3 = document.getElementById('Form3')
         let Progress = document.getElementById('Progress')
-        
+        if (this.state.client_name == '') {
+            return alert('please enter client name')
+        }
+        if (this.state.move_date == '') {
+            return alert('please enter move date')
+        }
         Form3.style.left = '-450px';
         Form4.style.left = '40px';
         Progress.style.width='270px';
@@ -70,6 +84,10 @@ export default class Home extends Component {
         let Form5 = document.getElementById('Form5')
         let Form4 = document.getElementById('Form4')
         let Progress = document.getElementById('Progress')
+        
+        if(this.state.phone_number == ''){
+            return alert('please enter phone number')
+        }
         
         Form5.style.left = '40px';
         Form4.style.left = '-450px';
@@ -136,6 +154,59 @@ export default class Home extends Component {
         this.setState({ tags: tags });
     }
 
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        let {pick_location,move_date,move_location,phone_number,tags,client_name} = this.state
+        let payload = {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
+            },
+            method: 'POST',
+            body:{
+                    pickup_location: pick_location,
+                    move_locations: move_location,
+                    date: move_date,
+                    name: client_name,
+                    mobile_number: phone_number,
+                    item_taking: tags
+                }
+            }
+
+
+        const postData = {
+            headers: {
+                "Accept": "*/*",
+                "Content-Type": "application/json",
+                'token': 'abc'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                pickup_location: pick_location,
+                move_locations: move_location,
+                date: move_date,
+                name: client_name,
+                mobile_number: phone_number,
+                item_taking: tags
+            })
+        }
+
+        
+        fetch("http://packers.realmakeronline.com/api/v1/create-packers", postData)
+            .then((response) =>{
+                console.log(response)
+                response.json()
+            })
+            .then((responseJson) => {
+                console.log(responseJson)
+                
+            })
+            .catch((err) => {
+                console.log(err)
+                
+            })
+    }
+
   render() {
     // console.log(this.state)
     let tags = this.state.tags;
@@ -186,7 +257,7 @@ export default class Home extends Component {
                                 </div>
                                 <div className="modal-body">
                                 <div className=" main-box-form">
-                                <form id="Form1"  >
+                                <form onSubmit={e => {           e.preventDefault();         }}   id="Form1"  >
                                     <h1><FontAwesomeIcon icon={faCrosshairs} /></h1>
                                     <h3 id='heading-pop'>
                                         Choose Your Pickup Location
@@ -202,7 +273,7 @@ export default class Home extends Component {
                                     </div>
                                 </form>
 
-                                <form id="Form2">
+                                <form onSubmit={e => {           e.preventDefault();         }}   id="Form2">
 
                                     <h1><FontAwesomeIcon icon={faLocationArrow} /></h1>
 
@@ -213,14 +284,14 @@ export default class Home extends Component {
                                         inputAutocompleteValue={this.state.move_location}
                                         onPlaceSelected={(place) => this.setState({move_location:place.formatted_address})}
                                     />
-
+                                    <ToastContainer delay={3000} />
                                     <div className="btn-box">
                                         <button type="button" id="Back1" onClick={this.Back_one}>BACK</button>
                                         <button type="button" id="Next2" onClick={this.Next_two}>NEXT</button>	
                                     </div>
                                 </form>
 
-                                <form id="Form3">
+                                <form onSubmit={e => {           e.preventDefault();         }}   id="Form3">
                                     <h1><FontAwesomeIcon icon={faCalendar} /></h1>
                                     <h3 id='heading-pop'>When do you want to move?</h3>
                                     <input 
@@ -244,7 +315,7 @@ export default class Home extends Component {
                                     </div>
                                 </form>
 
-                                <form id="Form4">
+                                <form onSubmit={e => {           e.preventDefault();         }}   id="Form4">
                                     <h1><FontAwesomeIcon icon={faPhone} /></h1>  
                                     <h3 id='heading-pop'>How can we contact you</h3>
                                     <input 
@@ -268,23 +339,24 @@ export default class Home extends Component {
                                     </div>
                                 </form>
 
-                                <form id="Form5">
+                                <form onSubmit={this.handleSubmit}   id="Form5">
                                     <h1><FontAwesomeIcon icon={faList} /></h1>
                                     <h3 id='heading-pop'>What items are you taking with you?</h3>
-                                    <input type="text" placeholder="Item" required />
-                                    <h5> Suggestions</h5>
 
-                                    <ReactTags tags={tags}
+                                    <ReactTags 
+                                        tags={tags}
                                         suggestions={suggestions}
                                         handleDelete={this.handleDelete}
                                         handleAddition={this.handleAddition}
                                         handleDrag={this.handleDrag} />
+                                    <h5> Suggestions</h5>
+
                                     <div className="btn-box">
                                         <button type="button" id="Back4" onClick={this.Back_four}>BACK</button>
                                         <button type='submit' >Get Price Now</button>
-                                        
                                     </div>
                                 </form>
+                                        
                                     <div className="step-row">
                                     <div id="Progress"></div>
                                         <div className="step-col"><small>Step 1</small></div>

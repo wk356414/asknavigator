@@ -609,3 +609,34 @@ span#requ small {
   position: relative;
   left: 20px;
 }
+
+
+.ReactTags__tag{
+  background: red;
+  border-radius: 11px;
+  padding: 4px;
+  margin: 4px;
+  color: white;
+  align-items: center;
+  display: inline-flex;
+  text-align: center;
+}
+
+.ReactTags__remove{
+  text-decoration: none !important;
+  margin-left: 5px;
+}
+
+.ReactTags__suggestions ul>li.active{
+  background: red;
+  color: white;
+}
+
+.ReactTags__suggestions{
+  background: aqua;
+  border-radius: 5px;
+}
+
+.ReactTags__suggestions ul>li{
+  list-style-type: none;
+}
