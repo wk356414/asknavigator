@@ -10,7 +10,7 @@ import { WithContext as ReactTags } from 'react-tag-input-latest';
 // import axios from 'axios'
 
 
-fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
+fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faQuestion);
 
 export default class Home extends Component {
     constructor(props){
