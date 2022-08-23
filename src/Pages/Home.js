@@ -324,12 +324,7 @@ export default class Home extends Component {
                                         value={this.state.phone_number}
                                         onChange={this.handleInputChange}
                                     />
-                                    <span id='phone'><FontAwesomeIcon icon={faQuestion}/> Why Phone Number is required? </span><br></br>
-                                    <span id='confirm'><small>1</small> Confirm Requirement</span><br></br>
-                                    <span id='requ'><small>We Will Confirm your Requirement to get better results</small></span><br></br>
-                                    <span id='confirm'><small>2</small> Avoid Spam</span><br></br>
-                                    <span id='requ'><small>We have to verify that you are a real human & not a bot or spammer.</small></span><br></br>
-
+                                    
 
                                     <div className="btn-box">
                                         <button type="button" id="Back3" onClick={this.Back_three}>BACK</button>
