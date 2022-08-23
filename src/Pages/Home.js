@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faCoffee, faCrosshairs, faLocationArrow,faCalendar, faPhone, faQuestion, faList} from '@fortawesome/fontawesome-free-solid'
 import Autocomplete from "react-google-autocomplete";
 import { WithContext as ReactTags } from 'react-tag-input-latest';
-import { ToastContainer, toast } from "react-toast";
-import axios from 'axios'
+// import { ToastContainer } from "react-toast";
+// import axios from 'axios'
 
 
 fontawesome.library.add(faCheckSquare, faCoffee, faCrosshairs, faLocationArrow);
@@ -44,7 +44,7 @@ export default class Home extends Component {
         let Form2 = document.getElementById('Form2')
         let Progress = document.getElementById('Progress')
         
-        if(this.state.pick_location == ''){
+        if(!this.state.pick_location){
             return alert('please enter pickup location');
         }
 
@@ -57,7 +57,7 @@ export default class Home extends Component {
         let Form3 = document.getElementById('Form3')
         let Form2 = document.getElementById('Form2')
         let Progress = document.getElementById('Progress')
-        if(this.state.move_location == ''){
+        if(!this.state.move_location){
             return alert('please enter move location')
         }
         Form2.style.left = '-450px';
@@ -69,10 +69,10 @@ export default class Home extends Component {
         let Form4 = document.getElementById('Form4')
         let Form3 = document.getElementById('Form3')
         let Progress = document.getElementById('Progress')
-        if (this.state.client_name == '') {
+        if (!this.state.client_name) {
             return alert('please enter client name')
         }
-        if (this.state.move_date == '') {
+        if (!this.state.move_date) {
             return alert('please enter move date')
         }
         Form3.style.left = '-450px';
@@ -85,7 +85,7 @@ export default class Home extends Component {
         let Form4 = document.getElementById('Form4')
         let Progress = document.getElementById('Progress')
         
-        if(this.state.phone_number == ''){
+        if(!this.state.phone_number){
             return alert('please enter phone number')
         }
         
@@ -157,21 +157,21 @@ export default class Home extends Component {
     handleSubmit = (e) =>{
         e.preventDefault()
         let {pick_location,move_date,move_location,phone_number,tags,client_name} = this.state
-        let payload = {
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json"
-            },
-            method: 'POST',
-            body:{
-                    pickup_location: pick_location,
-                    move_locations: move_location,
-                    date: move_date,
-                    name: client_name,
-                    mobile_number: phone_number,
-                    item_taking: tags
-                }
-            }
+        // let payload = {
+        //     headers: {
+        //         "Access-Control-Allow-Origin": "*",
+        //         "Content-Type": "application/json"
+        //     },
+        //     method: 'POST',
+        //     body:{
+        //             pickup_location: pick_location,
+        //             move_locations: move_location,
+        //             date: move_date,
+        //             name: client_name,
+        //             mobile_number: phone_number,
+        //             item_taking: tags
+        //         }
+        //     }
 
 
         const postData = {
@@ -284,7 +284,6 @@ export default class Home extends Component {
                                         inputAutocompleteValue={this.state.move_location}
                                         onPlaceSelected={(place) => this.setState({move_location:place.formatted_address})}
                                     />
-                                    <ToastContainer delay={3000} />
                                     <div className="btn-box">
                                         <button type="button" id="Back1" onClick={this.Back_one}>BACK</button>
                                         <button type="button" id="Next2" onClick={this.Next_two}>NEXT</button>	
